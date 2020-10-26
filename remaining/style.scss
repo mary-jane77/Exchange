@@ -1,0 +1,96 @@
+@import "../mixins";
+@import "../vars";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+* {
+  padding: 0;
+  outline: none;
+  text-decoration: none;
+  color: #292929;
+}
+
+.wrapper {
+  margin: 0 8rem;
+}
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: bold;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.2rem 8rem;
+  @include header(20px, 36px);
+  // width: 100%;
+}
+
+hr {
+  width: 100%;
+    height: 1px;
+    background-color: $stress
+}
+
+.teller {
+  display: flex;
+  width: 200px;
+  justify-content: space-between;
+  align-items: center;
+
+  i {
+    margin-right: 10px;
+    font-size: 40px;
+  }
+}
+
+i {
+    font-size: 30px;
+  }
+  
+  ul {
+    display: flex;
+    column-gap: 1rem;
+    list-style: none;
+  }
+  
+  .active,
+  li a:hover {
+    color: $stress;
+    border-bottom: 2px solid $stress;
+  }
+
+  .convert-wrapper {
+    width: 40rem;
+    height: 20rem;
+    margin: 10% auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center ;
+
+    hr{
+      height: 1px;
+    }
+  }
+
+  .item {
+    display: flex;
+    flex-direction: row;
+    width: 30rem;
+    box-sizing: border-box;
+    padding: 5px 30px;
+    justify-content: space-between;
+
+    div {
+      font-weight: bold;
+      font-size: 25px;
+    }
+  }
+
+  .rem {
+    hr {
+      width: 32rem;
+    }
+    padding: 0 50px
+  }

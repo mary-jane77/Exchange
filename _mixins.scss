@@ -1,0 +1,9 @@
+@mixin header($size, $height) {
+  font-family: 'Noto Sans', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: $size;
+    line-height: $height;
+    text-align: center;
+    letter-spacing: 0.06em;
+  }

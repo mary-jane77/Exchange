@@ -5,7 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Обменный пункт валют</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 </head>
 <body>
+    <header class="header">
+        <div class="nav">
+            <ul>
+                <li class="active" > <a href="">главная</a></li>
+                <li><a href="remaining/index.html">остаток</a></li>
+                <li><a href="">история</a></li>
+            </ul>
+        </div>
+        <div class="teller">
+            <i class="far fa-user-circle"></i>
+            <p class="teller_name">Операционист</p>
+        </div>
+    </header>
+    <hr>
+    <main>
+        <div class="wrapper">
+            <div class="convert-wrapper">
+            <form  class="convert">
+                    <i class="far fa-arrow-alt-circle-down" id="up"></i>
+                <div class="dropdown first">                        
+                        <select  id="first" class="dropdown-content" required>
+                            <option value="" disabled selected>Выберите валюту</option>
+                            <option value="USD" href="#">USD</option>
+                            <option value="EUR" href="#">EUR</option>
+                        <option value="CNY" href="#">CNY</option>
+                        <option value="BYN" href="#">BYN</option>
+                        <option value="RUB" href="#">RYB</option>
+                        <option value="GBP" href="#">GBP</option>
+                        </select>
+                    </div>
+                    <i class="far fa-arrow-alt-circle-up" id="down"></i>
+                <div class="dropdown second" >
+                    <select id="second" class="dropdown-content" required>
+                        <option value="" disabled selected>Выберите валюту</option>
+                        <option value="USD" href="#">USD</option>
+                        <option value="EUR" href="#">EUR</option>
+                        <option value="CNY" href="#">CNY</option>
+                        <option value="BYN" href="#">BYN</option>
+                        <option value="RUB" href="#">RYB</option>
+                        <option value="GBP" href="#">GBP</option>
+                      </select>
+                    </div>
+                <hr class="light">
+                <label class="calc summ" for="sum" >сумма</label>
+                <p class=" calc rate">курс</p>
+                <p class="calc total">pезультат</p>
+                <input class="num-summ" type="number" reqired id="sum"></input>
+                <p class="num-rate" >00.00</p>
+                <p class="num-total">00.00</p>
+                
+            </form>
+        </div>
+        </div>        
+        <button>Выйти</button>
+    </main>
+    <script src="index.js"></script>
+    <script src="remaining/index.js"></script>
 </body>
 </html>

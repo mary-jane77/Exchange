@@ -4,12 +4,18 @@ const total = document.querySelector('.num-total');
 const incoming = document.querySelector('#first');
 const out = document.querySelector('#second');
 const sum = document.querySelector('.num-summ');
-localStorage.setItem('rem-USD', 100000);
-localStorage.setItem('rem-EUR', 10);
-localStorage.setItem('rem-CNY', 100000);
-localStorage.setItem('rem-BYN', 100000);
-localStorage.setItem('rem-RUB', 100000);
-localStorage.setItem('rem-GBP', 100000);
+let currencies = ['GBP','USD','EUR','CNY','RUB','BYN']
+// localStorage.setItem('rem-USD', 100000);
+// localStorage.setItem('rem-EUR', 10);
+// localStorage.setItem('rem-CNY', 100000);
+// localStorage.setItem('rem-BYN', 100000);
+// localStorage.setItem('rem-RUB', 100000);
+// localStorage.setItem('rem-GBP', 100000);
+currencies.map((i)=>{
+  if (localStorage.getItem(`rem-${i}`)==null) {
+    localStorage.setItem(`rem-${i}`, 100000);
+  }
+})
 
 
 
@@ -56,6 +62,36 @@ sum.addEventListener('change', ()=>{
     console.log('calculation: '+ calculation)
     console.log('rem: '+ rem)
 })
+
+
+document.querySelector('.main').addEventListener('click', ()=>{
+  document.querySelector('.main').classList.add('active')
+  document.querySelector('.remaining-page').classList.add('active')
+  document.querySelector('.remaining-page').classList.remove('active')
+  document.querySelector('.convert').style.display='grid'
+  document.querySelector('.remaining').style.display='none'
+})
+document.querySelector('.remaining-page').addEventListener('click', ()=>{
+  document.querySelector('.main').classList.remove('active')
+  document.querySelector('.remaining-page').classList.add('active')
+  document.querySelector('.convert').style.display='none'
+  document.querySelector('.remaining').style.display='flex'
+})
+
+// const out = document.querySelector('#second');
+let remains = document.querySelectorAll(`.rem`)
+let currencyArr = ['GBP','USD','EUR','CNY','RUB','BYN']
+currencyArr.map((i)=>{
+    let selector = `rem-${i}`
+    document.querySelector(`.${i}`).innerHTML = `
+    <div class="item">
+    <div>${i}</div>
+    <div>${localStorage.getItem(selector)}</div>
+    </div>
+    <hr>
+    `
+})
+
 
 
 

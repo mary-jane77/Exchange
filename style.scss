@@ -10,7 +10,7 @@
 }
 
 .wrapper {
-  margin: 0 8rem;
+  // margin: 0 8rem;
 }
 
 body {
@@ -19,17 +19,21 @@ body {
 }
 
 header {
+  padding: 0 10%;
+  // width: auto;
   display: flex;
   justify-content: space-between;
-  margin: 0.2rem 8rem;
+  // margin: 0.2rem 8rem;
   @include header(20px, 36px);
   // width: 100%;
+  // border-bottom: 3px solid $stress;
 }
 
 hr {
   width: 100%;
-    height: 1px;
-    background-color: $stress
+    height: 3px;
+    background-color: $stress;
+    border: none;
 }
 
 .teller {
@@ -55,9 +59,9 @@ ul {
 }
 
 .active,
-li a:hover {
+li :hover {
   color: $stress;
-  border-bottom: 2px solid $stress;
+  border-bottom: 3px solid $stress;
 }
 
 .convert-wrapper {
@@ -66,14 +70,30 @@ li a:hover {
   border: 3px solid #1c1d21;
   border: 3px solid $stress;
   border-radius: 20px;
-  margin: 10% auto;
+  margin: 5% auto 40px;
+}
+
+.remaining {
+  width: 40rem;
+  height: 15rem;
+  margin: 2.5rem auto;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center ;
+}
+
+.item {
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
 }
 
 button {
   width: 9rem;
   height: 2.5rem;
-  position: relative;
-  right: -800px;
+  position: absolute;
+  right: 10%;
   border-radius: 10px;
   font-size: 15px;
 }

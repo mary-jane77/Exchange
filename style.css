@@ -251,6 +251,10 @@ input {
   color: #5cdb95;
 }
 
+.none {
+  display: none;
+}
+
 .operation {
   -webkit-box-align: center;
       -ms-flex-align: center;

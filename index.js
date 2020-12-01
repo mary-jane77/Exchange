@@ -4,7 +4,9 @@ const total = document.querySelector('.num-total');
 const incoming = document.querySelector('#first');
 const out = document.querySelector('#second');
 const clear = document.querySelector('.clear');
+const exit = document.querySelector('.exit');
 const sum = document.querySelector('.num-summ');
+let historyContent = document.createElement('div')
 let currencies = ['GBP', 'USD', 'EUR', 'CNY', 'RUB', 'BYN']
 // localStorage.setItem('rem-USD', 100000);
 // localStorage.setItem('rem-EUR', 10);
@@ -18,9 +20,11 @@ currencies.map((i) => {
   }
 })
 
+exit.addEventListener('click', (e) => {
+  e.preventDefault()
+  window.close()
+})
 
-
-console.log(incoming.value)
 console.log(out)
 // caa5bc61c6db402b959da595a864614b
 async function getRate() {
@@ -33,10 +37,10 @@ async function getRate() {
   localStorage.setItem('RUB', data.rates.RUB);
   localStorage.setItem('GBP', data.rates.GBP);
   console.log(data)
-  // window.setTimeout(getRate, 60 * 60 * 1000);
+  window.setTimeout(getRate, 60 * 60 * 1000);
 }
 window.addEventListener('load', getRate());
-//   getRate()
+  getRate()
 
 
 let historyArr = []
@@ -108,6 +112,7 @@ clear.addEventListener('click', () => {
 
 
 document.querySelector('.main').addEventListener('click', () => {
+  document.querySelector('.clear').classList.remove('none')
   document.querySelector('.convert-wrapper').style.overflow = 'visible'
   document.querySelector('.main').classList.add('active')
   document.querySelector('.remaining-page').classList.add('active')
@@ -118,6 +123,7 @@ document.querySelector('.main').addEventListener('click', () => {
   document.querySelector('.history').style.display = 'none'
 })
 document.querySelector('.remaining-page').addEventListener('click', () => {
+  document.querySelector('.clear').classList.add('none')
   document.querySelector('.convert-wrapper').style.overflow = 'visible'
   document.querySelector('.main').classList.remove('active')
   document.querySelector('.remaining-page').classList.add('active')
@@ -139,14 +145,18 @@ document.querySelector('.remaining-page').addEventListener('click', () => {
   })
 })
 
+
+
 document.querySelector('.history-page').addEventListener('click', () => {
+
+  document.querySelector('.clear').classList.add('none')
   document.querySelector('.main').classList.remove('active')
   document.querySelector('.remaining-page').classList.remove('active')
   document.querySelector('.history-page').classList.add('active')
   document.querySelector('.convert').style.display = 'none'
   document.querySelector('.remaining').style.display = 'none'
   document.querySelector('.history').style.display = 'flex'
-  let historyContent = document.createElement('div')
+  
 
   console.log(historyArr)
   historyArr.map(i => {
@@ -172,9 +182,7 @@ document.querySelector('.history').children[0].replaceWith(historyContent)
 // const out = document.querySelector('#second');
 let remains = document.querySelectorAll(`.rem`)
 
-document.querySelector('.exit').addEventListener('click', () => {
-  window.close()
-})
+
 
 
 

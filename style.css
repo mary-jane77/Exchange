@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-weight: bold;
 }
 
@@ -26,6 +26,14 @@ header {
   line-height: 36px;
   text-align: center;
   letter-spacing: 0.06em;
+}
+
+form {
+  height: 200px;
+}
+
+.form-wrapper {
+  height: 300px;
 }
 
 hr {
@@ -69,7 +77,7 @@ ul {
 .active,
 li :hover {
   color: #499930;
-  border-bottom: 3px solid #499930;
+  text-decoration: underline;
 }
 
 .convert-wrapper {
@@ -110,11 +118,19 @@ li :hover {
 
 button {
   width: 9rem;
-  height: 2.5rem;
-  position: absolute;
-  right: 10%;
+  height: 35px;
   border-radius: 10px;
   font-size: 15px;
+}
+
+.exit {
+  position: absolute;
+  right: 25%;
+}
+
+.clear {
+  position: absolute;
+  left: 25%;
 }
 
 .convert {
@@ -136,7 +152,7 @@ button {
       -ms-flex-align: center;
           align-items: center;
   justify-items: center;
-  height: 200px;
+  height: 300px;
   width: 600px;
 }
 
@@ -176,8 +192,8 @@ button {
 }
 
 .summ {
-  -ms-grid-row: 1;
-  -ms-grid-column: 3;
+  -ms-grid-row: 2;
+  -ms-grid-column: 5;
   grid-area: sum;
 }
 
@@ -233,4 +249,66 @@ input {
 
 .okay {
   color: #5cdb95;
+}
+
+.operation {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  justify-items: center;
+  display: -ms-grid;
+  display: grid;
+  -webkit-column-gap: 26px;
+          column-gap: 26px;
+  -ms-grid-columns: (auto)[4];
+      grid-template-columns: repeat(4, auto);
+  -ms-grid-rows: (auto)[2];
+      grid-template-rows: repeat(2, auto);
+      grid-template-areas: ". date from-text to-text sum-text ." ". date from to sum .";
+}
+
+.date {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: date;
+}
+
+.from-text {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: from-text;
+}
+
+.from {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: from;
+}
+
+.to-text {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: to-text;
+}
+
+.to {
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+  grid-area: to;
+}
+
+.sum-text {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+  grid-area: sum-text;
+}
+
+.sum {
+  -ms-grid-row: 2;
+  -ms-grid-column: 5;
+  grid-area: sum;
 }

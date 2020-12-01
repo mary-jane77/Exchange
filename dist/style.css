@@ -1,16 +1,9 @@
-@import "mixins";
-@import "vars";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
-
 * {
   padding: 0;
   outline: none;
   text-decoration: none;
   color: #292929;
-}
-
-.wrapper {
-  // margin: 0 8rem;
 }
 
 body {
@@ -20,18 +13,21 @@ body {
 
 header {
   padding: 0 10%;
-  // width: auto;
   display: flex;
   justify-content: space-between;
-  // margin: 0.2rem 8rem;
-  @include header(20px, 36px);
-  // width: 100%;
-  // border-bottom: 3px solid $stress;
+  font-family: "Noto Sans", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 36px;
+  text-align: center;
+  letter-spacing: 0.06em;
 }
 
 form {
   height: 200px;
 }
+
 .form-wrapper {
   height: 300px;
 }
@@ -39,7 +35,7 @@ form {
 hr {
   width: 100%;
   height: 3px;
-  background-color: $stress;
+  background-color: #499930;
   border: none;
 }
 
@@ -48,11 +44,10 @@ hr {
   width: 200px;
   justify-content: space-between;
   align-items: center;
-
-  i {
-    margin-right: 10px;
-    font-size: 40px;
-  }
+}
+.teller i {
+  margin-right: 10px;
+  font-size: 40px;
 }
 
 i {
@@ -67,7 +62,7 @@ ul {
 
 .active,
 li :hover {
-  color: $stress;
+  color: #499930;
   text-decoration: underline;
 }
 
@@ -75,7 +70,7 @@ li :hover {
   width: 40rem;
   height: 20rem;
   border: 3px solid #1c1d21;
-  border: 3px solid $stress;
+  border: 3px solid #499930;
   border-radius: 20px;
   margin: 5% auto 40px;
 }
@@ -107,6 +102,7 @@ button {
   position: absolute;
   right: 25%;
 }
+
 .clear {
   position: absolute;
   left: 25%;
@@ -117,11 +113,8 @@ button {
   box-sizing: border-box;
   position: relative;
   display: grid;
-  grid-template: 2rem 4rem 2rem / repeat(5, auto);
-  grid-template-areas:
-    "up down sum course total"
-    "hr hr hr hr hr"
-    "curr1 curr2 numsum numcurrency numtotal";
+  grid-template: 2rem 4rem 2rem/repeat(5, auto);
+  grid-template-areas: "up down sum course total" "hr hr hr hr hr" "curr1 curr2 numsum numcurrency numtotal";
   column-gap: 0.5rem;
   row-gap: 0.1rem;
   padding-top: 10%;
@@ -150,25 +143,31 @@ button {
 .first {
   grid-area: curr1;
 }
+
 .second {
   grid-area: curr2;
 }
+
 .summ {
   grid-area: sum;
-  // padding: 0 20px;
 }
+
 .course {
   grid-area: course;
 }
+
 .total {
   grid-area: total;
 }
+
 .num-summ {
   grid-area: numsum;
 }
+
 .num-course {
   grid-area: numcurrency;
 }
+
 .num-total {
   grid-area: numtotal;
 }
@@ -194,40 +193,9 @@ input {
 }
 
 .okay {
-  color: $okay;
+  color: #5cdb95;
 }
 
-.operation {
-  align-items: center;
-  justify-content: center;
-  justify-items: center;
-  display: grid;
-  column-gap: 26px;
-  grid-template-columns: repeat(4, auto);
-  grid-template-rows: repeat(2, auto);
-  grid-template-areas:
-    ". date from-text to-text sum-text ."
-    ". date from to sum .";
-}
-
-.date {
-  grid-area: date;
-}
-.from-text {
-  grid-area: from-text;
-}
-.from {
-  grid-area: from;
-}
-.to-text {
-  grid-area: to-text;
-}
-.to {
-  grid-area: to;
-}
-.sum-text {
-  grid-area: sum-text;
-}
-.sum {
-  grid-area: sum;
+.history {
+  overflow: scroll;
 }
